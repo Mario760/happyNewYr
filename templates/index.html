@@ -63,11 +63,13 @@
 </div>
 
 <script>
-    // 判断屏幕宽度
-    if (window.innerWidth < 768) {
-      // 隐藏桌面端内容，显示提示
+        // 判断屏幕宽度
+    if (navigator.userAgent.toLowerCase().includes('mobile') || window.innerWidth < 768) {
       document.querySelector('.desktop-content').style.display = 'none';
       document.querySelector('.message').style.display = 'block';
+    } else {
+      document.querySelector('.desktop-content').style.display = 'block';
+      document.querySelector('.message').style.display = 'none';
     }
 </script>
 <script>
