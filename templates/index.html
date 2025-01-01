@@ -7,63 +7,71 @@
     <title>新年快乐</title>
 </head>
 <body>
-<canvas class="canvas"></canvas>
-<div class="overlay">
-    <div class="tabs">
-        <div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span><span
-                class="tabs-label">Share</span></div>
-        <div class="tabs-panels">
-            <ul class="tabs-panel commands">
-                <li class="commands-item"><span class="commands-item-title">Text</span><span class="commands-item-info"
-                                                                                             data-demo="Hello :)">Type anything</span><span
-                        class="commands-item-action">Demo</span></li>
-                <li class="commands-item"><span class="commands-item-title">Countdown</span><span
-                        class="commands-item-info" data-demo="#countdown 10">#countdown<span class="commands-item-mode">number</span></span><span
-                        class="commands-item-action">Demo</span></li>
-                <li class="commands-item"><span class="commands-item-title">Icon</span><span class="commands-item-info"
-                                                                                             data-demo="#icon thumbs-up">#icon<span
-                        class="commands-item-mode">name</span>&nbsp;(using <a
-                        href="//fortawesome.github.io/Font-Awesome/#icons-new"
-                        target="_blank">Font Awesome</a>)</span><span class="commands-item-action">Demo</span></li>
-                <li class="commands-item"><span class="commands-item-title">Time</span><span class="commands-item-info"
-                                                                                             data-demo="#time">#time</span><span
-                        class="commands-item-action">Demo</span></li>
-                <li class="commands-item"><span class="commands-item-title">Rectangle</span><span
-                        class="commands-item-info" data-demo="#rectangle 30x15">#rectangle<span
-                        class="commands-item-mode">width x height</span></span><span
-                        class="commands-item-action">Demo</span></li>
-                <li class="commands-item"><span class="commands-item-title">Circle</span><span
-                        class="commands-item-info" data-demo="#circle 25">#circle<span class="commands-item-mode">diameter</span></span><span
-                        class="commands-item-action">Demo</span></li>
-                <li class="commands-item commands-item--gap"><span class="commands-item-title">Animate</span><span
-                        class="commands-item-info" data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span
-                        class="commands-item-mode">command1</span>&nbsp;|<span
-                        class="commands-item-mode">command2</span></span><span class="commands-item-action">Demo</span>
-                </li>
-            </ul>
-            <div class="tabs-panel ui-details">
-                <div class="ui-details-content">
+<div class="desktop-content">
+    <canvas class="canvas"></canvas>
+    <div class="overlay">
+        <div class="tabs">
+            <div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span><span
+                    class="tabs-label">Share</span></div>
+            <div class="tabs-panels">
+                <ul class="tabs-panel commands">
+                    <li class="commands-item"><span class="commands-item-title">Text</span><span
+                            class="commands-item-info"
+                            data-demo="Hello :)">Type anything</span><span
+                            class="commands-item-action">Demo</span></li>
+                    <li class="commands-item"><span class="commands-item-title">Countdown</span><span
+                            class="commands-item-info" data-demo="#countdown 10">#countdown<span
+                            class="commands-item-mode">number</span></span><span
+                            class="commands-item-action">Demo</span></li>
+                    <li class="commands-item"><span class="commands-item-title">Icon</span><span
+                            class="commands-item-info"
+                            data-demo="#icon thumbs-up">#icon<span
+                            class="commands-item-mode">name</span>&nbsp;(using <a
+                            href="//fortawesome.github.io/Font-Awesome/#icons-new"
+                            target="_blank">Font Awesome</a>)</span><span class="commands-item-action">Demo</span></li>
+                    <li class="commands-item"><span class="commands-item-title">Time</span><span
+                            class="commands-item-info"
+                            data-demo="#time">#time</span><span
+                            class="commands-item-action">Demo</span></li>
+                    <li class="commands-item"><span class="commands-item-title">Rectangle</span><span
+                            class="commands-item-info" data-demo="#rectangle 30x15">#rectangle<span
+                            class="commands-item-mode">width x height</span></span><span
+                            class="commands-item-action">Demo</span></li>
+                    <li class="commands-item"><span class="commands-item-title">Circle</span><span
+                            class="commands-item-info" data-demo="#circle 25">#circle<span class="commands-item-mode">diameter</span></span><span
+                            class="commands-item-action">Demo</span></li>
+                    <li class="commands-item commands-item--gap"><span class="commands-item-title">Animate</span><span
+                            class="commands-item-info" data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span
+                            class="commands-item-mode">command1</span>&nbsp;|<span
+                            class="commands-item-mode">command2</span></span><span
+                            class="commands-item-action">Demo</span>
+                    </li>
+                </ul>
+                <div class="tabs-panel ui-details">
+                    <div class="ui-details-content">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <audio src="{{ url_for('static', filename='music/happynewyr.mp3') }}" autoplay></audio>
 </div>
-<audio src="{{ url_for('static', filename='music/happynewyr.mp3') }}" autoplay loop></audio>
 
 <!-- 手机端提示 -->
-  <div class="message">
+<div class="message">
     请在电脑端打开此页面 🙏
-  </div>
+</div>
 
-  <script>
+<script>
     // 判断屏幕宽度
     if (window.innerWidth < 768) {
       // 隐藏桌面端内容，显示提示
       document.querySelector('.desktop-content').style.display = 'none';
       document.querySelector('.message').style.display = 'block';
     }
-  </script>
+</script>
 <script>
+    audioElement.play();
 
     var str_text='|五|四|三|二|一|2024|幸而识你|幸而有你|2025|请多指教|朝暮与年岁并往|我与你共至光年|愿有岁月可回首|且以情深共白头|安妮宝贝|新年快乐|(づ￣3￣)づ╭❤～！'
 
