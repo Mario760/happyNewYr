@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <audio src="static/happynewyr.mp3" autoplay="autoplay"></audio>
+    <audio src="./static/happynewyr.mp3" autoplay="autoplay"></audio>
 <script>
 
 var str_text='|五|四|三|二|一|2024|幸而识你|幸而有你|2025|请多指教|朝暮与年岁并往|我与你共至光年|愿有岁月可回首|且以情深共白头|安妮宝贝|新年快乐|(づ￣3￣)づ╭❤～！'
@@ -447,7 +447,7 @@ S.Dot.prototype = {
 
 
 S.ShapeBuilder = (function () {
-  var gap = 13,
+  var gap = window.innerWidth > 768 ? 13 : 8,
       shapeCanvas = document.createElement('canvas'),
       shapeContext = shapeCanvas.getContext('2d'),
       fontSize = 500,
